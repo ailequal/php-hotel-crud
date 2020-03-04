@@ -10895,3 +10895,13 @@ body {
   font-size: 16px;
 }
 
+h1 {
+  margin: 20px 0 40px 0;
+  text-align: center;
+}
+
+footer {
+  margin: 40px 0 20px 0;
+  text-align: end;
+}
+
