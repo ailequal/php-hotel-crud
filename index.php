@@ -1,5 +1,6 @@
 <?php
-	// echo 'hello world'
+	include 'database.php';
+	// var_dump($array);
 ?>
 
 <!DOCTYPE html>
@@ -26,24 +27,14 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php foreach ($array as $room) { ?>
 				<tr>
-					<td>100</td>
-					<td>First floor</td>
-					<td>2</td>
+					<td><?php echo $room['room_number'] ?></td>
+					<td><?php echo $room['floor'] ?></td>
+					<td><?php echo $room['beds'] ?></td>
 				</tr>
-				<tr>
-					<td>102</td>
-					<td>First floor</td>
-					<td>2</td>
-				</tr>
+				<?php } ?>
 			</tbody>
-			<tfoot>
-				<tr>
-					<td>104</td>
-					<td>First floor</td>
-					<td>4</td>
-				</tr>
-			</tfoot>
 		</table>
 	</main>
 	<footer>
