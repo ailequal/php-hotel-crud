@@ -1,22 +1,14 @@
 <?php
 	include 'database.php';
-	// var_dump($array);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./dist/app.css">
-	<title>php-hotel-crud</title>
-</head>
+<?php include './partials/head.php' ?>
 
 <body>
-	<header>
-		<h1>php-hotel-crud</h1>
-	</header>
+	<?php include './partials/header.php' ?>
 	<main>
 		<table class="table container-lg">
 			<thead>
@@ -37,11 +29,7 @@
 			</tbody>
 		</table>
 	</main>
-	<footer>
-		<div class="container-lg">
-			<h6>ailequal</h6>
-		</div>
-	</footer>
+	<?php include './partials/footer.php' ?>
 	<script src="./dist/app.js"></script>
 </body>
 
