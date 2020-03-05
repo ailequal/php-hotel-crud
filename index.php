@@ -22,24 +22,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($array as $room) { ?>
-				<tr>
-					<td><?php echo $room['room_number'] ?></td>
-					<td><?php echo $room['floor'] ?></td>
-					<td><?php echo $room['beds'] ?></td>
-					<td>
-						<a href="show/show.php?id=<?php echo $room['id'] ?>">VIEW</a>
-					</td>
-					<td>
-						<a href="#">UPDATE</a>
-					</td>
-					<td>
-						<form action="./delete/delete.php" method="POST">
-							<input type="hidden" name="id" value="<?php echo $room['id'] ?>">
-							<input class="btn-danger" type="submit" value="DELETE">
-						</form>
-					</td>
-				</tr>
+				<?php if (!empty($array)) { ?>
+					<?php foreach ($array as $room) { ?>
+						<tr>
+							<td><?php echo $room['room_number'] ?></td>
+							<td><?php echo $room['floor'] ?></td>
+							<td><?php echo $room['beds'] ?></td>
+							<td>
+								<a href="./show/show.php?id=<?php echo $room['id'] ?>">VIEW</a>
+							</td>
+							<td>
+								<a href="#">UPDATE</a>
+							</td>
+							<td>
+								<form action="./delete/delete.php" method="POST">
+									<input type="hidden" name="id" value="<?php echo $room['id'] ?>">
+									<input class="btn-danger" type="submit" value="DELETE">
+								</form>
+							</td>
+						</tr>
+					<?php } ?>
 				<?php } ?>
 			</tbody>
 		</table>

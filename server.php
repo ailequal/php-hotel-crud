@@ -3,9 +3,9 @@
 	include 'database.php';
 
 	// sql query
-	$sql = "SELECT `room_number`, `floor`, `beds` FROM `stanze`";
+	$sql = "SELECT `id`, `room_number`, `floor`, `beds` FROM `stanze`";
 	$result = $conn->query($sql);
-	
+
 	$array = [];
 	if ($result && $result->num_rows > 0) {
 	// output data for each row

@@ -6,7 +6,7 @@
 	$id_room = $_GET['id'];
 
 	// sql query
-	$sql = "SELECT `room_number`, `floor`, `beds` FROM `stanze` WHERE `id` =  $id_room";
+	$sql = "SELECT `id`, `room_number`, `floor`, `beds` FROM `stanze` WHERE `id` =  $id_room";
 	$result = $conn->query($sql);
 
 	if ($result && $result->num_rows > 0) {
