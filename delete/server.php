@@ -3,18 +3,20 @@
 	include __DIR__ .  '/../database.php';
 
 	// get room id
-	$id_room = $_GET['id'];
+	if(empty($_POST['id'])) {
+		die('Wrong ID');
+	}
+	$id_room = $_POST['id'];
+	// var_dump($id_room);
 
 	// sql query
-	$sql = "SELECT `id`, `room_number`, `floor`, `beds` FROM `stanze` WHERE `id` =  $id_room";
+	$sql = "DELETE FROM `stanze` WHERE `id` =  '$id_room'";
 	$result = $conn->query($sql);
 
-	if ($result && $result->num_rows > 0) {
-		$room = $result->fetch_assoc();
-	} elseif ($result) {
-		echo "No results";
+	if ($result) {
+		// echo "Room deleted";
 	} else {
-		echo "Query error";
+		echo "An error occured while deliting, please try again";
 	}
 	$conn->close();
 
