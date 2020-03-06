@@ -2,22 +2,26 @@
 
 	include __DIR__ .  '/../database.php';
 
-	// get room id
+	// post room id
 	if(empty($_POST['id'])) {
-		die('Wrong ID');
+		die('No ID selected');
 	}
 	$id_room = $_POST['id'];
-	// var_dump($id_room);
 
-	// sql query
+	// sql query for checking room id
+	$sql = "SELECT * FROM `stanze` WHERE `id`='$id_room'";
+	$result = $conn->query($sql);
+	if ($result && $result->num_rows == 0) {
+		die('Wrong ID, no matching room found');
+	} 
+
+	// sql query for deleting room id
 	$sql = "DELETE FROM `stanze` WHERE `id` =  '$id_room'";
 	$result = $conn->query($sql);
-
-	if ($result) {
-		// echo "Room deleted";
-	} else {
+	if (!$result) {
 		echo "An error occured while deliting, please try again";
 	}
+
 	$conn->close();
 
 ?>
