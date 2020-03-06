@@ -1,6 +1,6 @@
 <?php
 
-	include './database.php';
+	include 'database.php';
 
 	// get room id
 	$id_room = $_GET['id'];
@@ -18,5 +18,4 @@
 	}
 	$conn->close();
 
-	var_dump($room);
 ?>

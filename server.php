@@ -1,6 +1,6 @@
 <?php
 
-	include 'database.php';
+	include __DIR__ . '/database.php';
 
 	// sql query
 	$sql = "SELECT `id`, `room_number`, `floor`, `beds` FROM `stanze`";
@@ -11,7 +11,7 @@
 	// output data for each row
 	while($row = $result->fetch_assoc()) {
 		// echo "Room number " . $row['room_number']. " Floor number " . $row['floor'];
-		$array[] = $row;
+		$rooms[] = $row;
 		}
 	} elseif ($result) {
 		echo "No results";

@@ -1,7 +1,12 @@
 <?php
 	// database login info
-	$servername = "server";
-	$username = "user";
+	$server_name = "server";
+	$user_name = "user";
 	$password = "password";
-	$dbname = "db";
+	$database_name = "db";
+
+	// path for file structure
+	$host = 'http://localhost:80/';
+	$folder = 'folder/';
+	$path = $host . $folder;
 ?>
