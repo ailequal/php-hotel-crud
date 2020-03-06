@@ -1,6 +1,6 @@
 <?php
 
-	include __DIR__ . '/database.php';
+	include 'database.php';
 
 	// sql query
 	$sql = "SELECT `id`, `room_number`, `floor`, `beds` FROM `stanze`";
