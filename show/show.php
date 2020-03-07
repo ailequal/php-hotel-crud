@@ -13,9 +13,9 @@
 		<?php if (!empty($room)) { ?>
 			<div class="card text-center mt-5 mb-5" style="width: 18rem;">
 				<div class="card-body">
-					<h5 class="card-title">The room ID is: <?php echo $room['id'] ?></h5>
-					<h6 class="card-subtitle mb-2 text-muted">The room number is: <?php echo $room['room_number'] ?></h6>
-					<h6 class="card-subtitle mb-2 text-muted">The floor number is: <?php echo $room['floor'] ?></h6>
+					<h5 class="card-title">Room ID <?php echo $room['id'] ?></h5>
+					<h6 class="card-subtitle mb-2 text-muted">Room number: <?php echo $room['room_number'] ?></h6>
+					<h6 class="card-subtitle mb-2 text-muted">Floor number: <?php echo $room['floor'] ?></h6>
 					<h6 class="card-subtitle mb-2 text-muted">Beds in the room: <?php echo $room['beds'] ?></h6>
 				</div>
 			</div>

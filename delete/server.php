@@ -19,7 +19,7 @@
 	$sql = "DELETE FROM `stanze` WHERE `id` =  '$id_room'";
 	$result = $conn->query($sql);
 	if (!$result) {
-		echo "An error occured while deliting, please try again";
+		echo "An error occured while deleting, please try again";
 	}
 
 	$conn->close();

@@ -33,7 +33,7 @@
 									<a href="<?php echo $path ?>show/show.php?id=<?php echo $room['id'] ?>">VIEW</a>
 								</td>
 								<td>
-									<a href="#">UPDATE</a>
+									<a href="<?php echo $path ?>update/update.php?id=<?php echo $room['id'] ?>">UPDATE</a>
 								</td>
 								<td>
 									<form action="<?php echo $path ?>delete/delete.php" method="POST">
