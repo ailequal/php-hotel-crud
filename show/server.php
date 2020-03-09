@@ -9,4 +9,5 @@
 	$id_room = $_GET['id'];
 	
 	$room = get_by_id($conn, 'stanze', $id_room);
+	$conn->close();
 ?>

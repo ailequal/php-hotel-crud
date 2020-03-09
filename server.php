@@ -3,4 +3,5 @@
 	include 'database.php';
 
 	$rooms = get_all($conn, 'stanze');
+		$conn->close();
 ?>
