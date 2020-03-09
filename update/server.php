@@ -1,4 +1,5 @@
 <?php
+	include __DIR__ . '/../functions.php';
 	include __DIR__ . '/../database.php';
 
 	// get room id
@@ -7,20 +8,16 @@
 	$floor = $_POST['floor'];
 	$beds = $_POST['beds'];
 
-	// sql query for checking room id
-	$sql = "SELECT * FROM `stanze` WHERE `id`='$id_room'";
-	$result = $conn->query($sql);
-	if ($result && $result->num_rows == 0) {
-		die('Wrong ID, no matching room found');
-	} 
+	// checking room id
+	$room = get_by_id($conn, 'stanze', $id_room);
 
-	// sql query for updating room id
-	$sql = "UPDATE `stanze` SET `room_number` = $room_number, `floor` = $floor, `beds` = $beds WHERE `id` =  '$id_room'";
-	$result = $conn->query($sql);
-	if (!$result) {
-		echo "An error occured while updating, please try again";
-	}
-
+	// query command
+	$sql = "UPDATE `stanze` SET `room_number` = ?, `floor` = ?, `beds` = ? WHERE `id` =  ?";
+	// prepare and bind
+	$stmt = $conn->prepare($sql);
+	$stmt->bind_param("iiii", $room_number, $floor, $beds, $id_room);
+	// execute conversion
+	$stmt->execute();
 	$conn->close();
 
 	$redirect = $path . 'show/show.php?id=' . $id_room;
