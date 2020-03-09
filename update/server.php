@@ -1,5 +1,4 @@
 <?php
-
 	include __DIR__ . '/../database.php';
 
 	// get room id
@@ -26,5 +25,4 @@
 
 	$redirect = $path . 'show/show.php?id=' . $id_room;
 	header("Location: $redirect");
-
 ?>

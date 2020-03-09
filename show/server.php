@@ -1,6 +1,6 @@
 <?php
 
-	include __DIR__ .  '/../database.php';
+	include __DIR__ . '/../database.php';
 
 	// get room id
 	if(empty($_GET['id'])) {
